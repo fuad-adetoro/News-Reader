@@ -15,8 +15,19 @@ class HomeNewsViewCell: UICollectionViewCell {
     
     var onReuse: () -> Void = {}
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.setUpImageView()
+    }
+    
+    func setUpImageView() {
+        self.newsImageView.layer.masksToBounds = true
+        self.newsImageView.layer.cornerRadius = 8
+        
+        let greyColor = UIColor.gray.cgColor
+        
+        self.newsImageView.layer.borderColor = greyColor
     }
     
     override func prepareForReuse() {
@@ -28,7 +39,7 @@ class HomeNewsViewCell: UICollectionViewCell {
     
     func configure(_ article: News) {
         self.newsTitle.text = article.title ?? "Title not found"
-        self.newsDescription.text = article.description ?? "Description not found"
+        self.newsDescription.text = article.content ?? "Description not found"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"

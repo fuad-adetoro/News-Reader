@@ -50,28 +50,84 @@
                     <navigationItem key="navigationItem" title="News Reader" id="sbH-WM-vkh"/>
                     <connections>
                         <outlet property="collectionView" destination="EIc-2M-Wmf" id="D5L-ih-aSX"/>
-                        <segue destination="als-ZP-Te6" kind="show" identifier="showNewsDisplayerVC" id="mGl-LK-iEB"/>
+                        <segue destination="als-ZP-Te6" kind="presentation" identifier="displayNewsDisplayerVC" modalPresentationStyle="fullScreen" id="mGl-LK-iEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713.04347826086962" y="75.669642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--News Displayer View Controller-->
         <scene sceneID="sV6-Xz-uH7">
             <objects>
-                <viewController id="als-ZP-Te6" sceneMemberID="viewController">
+                <viewController id="als-ZP-Te6" customClass="NewsDisplayerViewController" customModule="Fuads_News_Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KdJ-gc-bbh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ul7-ln-jaS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="bPg-xb-XVH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-fp-pNm">
+                                <rect key="frame" x="333" y="47" width="61" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonClicked:" destination="als-ZP-Te6" eventType="touchUpInside" id="ilx-ep-EA9"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jWV-2l-1c3">
+                                <rect key="frame" x="0.0" y="170" width="414" height="692"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K9A-Tj-cs9">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6N5-xy-oCJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4hv-uZ-odp">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dt6-DX-kJC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dt6-DX-kJC" firstAttribute="trailing" secondItem="OoO-fp-pNm" secondAttribute="trailing" constant="20" id="4hj-G9-gHm"/>
+                            <constraint firstItem="dt6-DX-kJC" firstAttribute="trailing" secondItem="jWV-2l-1c3" secondAttribute="trailing" id="FVc-l2-nL6"/>
+                            <constraint firstItem="OoO-fp-pNm" firstAttribute="top" secondItem="dt6-DX-kJC" secondAttribute="top" constant="3" id="NXW-YO-C5f"/>
+                            <constraint firstItem="jWV-2l-1c3" firstAttribute="leading" secondItem="dt6-DX-kJC" secondAttribute="leading" id="Xdf-LF-KV6"/>
+                            <constraint firstItem="Ul7-ln-jaS" firstAttribute="top" secondItem="KdJ-gc-bbh" secondAttribute="top" id="cAU-UD-4TP"/>
+                            <constraint firstItem="dt6-DX-kJC" firstAttribute="trailing" secondItem="Ul7-ln-jaS" secondAttribute="trailing" id="iPt-ff-zkX"/>
+                            <constraint firstItem="jWV-2l-1c3" firstAttribute="top" secondItem="Ul7-ln-jaS" secondAttribute="bottom" constant="10" id="njs-ep-3Fg"/>
+                            <constraint firstItem="Ul7-ln-jaS" firstAttribute="leading" secondItem="dt6-DX-kJC" secondAttribute="leading" id="ue3-HY-tCZ"/>
+                            <constraint firstItem="dt6-DX-kJC" firstAttribute="bottom" secondItem="jWV-2l-1c3" secondAttribute="bottom" id="wbz-mr-WJ1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fdk-zu-wqZ"/>
+                    <connections>
+                        <outlet property="articleImageView" destination="Ul7-ln-jaS" id="WMp-bC-AyZ"/>
+                        <outlet property="collectionView" destination="jWV-2l-1c3" id="BV1-Ch-2Z3"/>
+                        <outlet property="dismissButton" destination="OoO-fp-pNm" id="zFu-3A-CM0"/>
+                        <outlet property="imageViewHeightConstraint" destination="bPg-xb-XVH" id="4nd-rD-9db"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcY-fZ-75l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649" y="76"/>
+            <point key="canvasLocation" x="1647.826086956522" y="75.669642857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bSb-NG-9fp">

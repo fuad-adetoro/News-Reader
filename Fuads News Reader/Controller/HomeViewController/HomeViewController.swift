@@ -69,6 +69,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return CGSize(width: self.collectionView.frame.width, height: 100)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !errorRetrievingArticles {
+            // displayNewsDisplayerVC
+            let article = self.newsArticles[indexPath.row]
+            performSegue(withIdentifier: "displayNewsDisplayerVC", sender: article)
+        }
+    }
 }
 
 // MARK: - News Fetcher
@@ -92,3 +100,16 @@ extension HomeViewController {
     }
 }
 
+// MARK: - Passing Data with segue
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier == "displayNewsDisplayerVC", let article = sender as? News {
+            let newsDisplayerViewController = segue.destination as! NewsDisplayerViewController
+            newsDisplayerViewController.newsArticle = article
+        }
+    }
+}
