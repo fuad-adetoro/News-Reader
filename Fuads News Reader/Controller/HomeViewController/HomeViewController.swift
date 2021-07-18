@@ -54,6 +54,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let article = self.newsArticles[indexPath.row]
             homeNewsViewCell.configure(article)
             
+            if let imageURLString = article.urlToImage, let imageURL = URL(string: imageURLString) {
+                homeNewsViewCell.newsImageView.loadImage(at: imageURL)
+            }
+            
             return homeNewsViewCell
         }
     }

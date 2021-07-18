@@ -13,8 +13,17 @@ class HomeNewsViewCell: UICollectionViewCell {
     @IBOutlet weak var newsDescription: UILabel!
     @IBOutlet weak var newsDateLabel: UILabel!
     
+    var onReuse: () -> Void = {}
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        onReuse()
+        self.newsImageView.image = nil
+        self.newsImageView.cancelImageLoad()
     }
     
     func configure(_ article: News) {
