@@ -20,7 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EIc-2M-Wmf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KzH-tw-qrq">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KzH-tw-qrq">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -41,10 +41,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4dx-fW-O6t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EIc-2M-Wmf" secondAttribute="trailing" id="KmR-eq-hUi"/>
-                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QgZ-bj-4aV"/>
-                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XZa-3L-vjw"/>
+                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QYT-sK-8bK"/>
+                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RHT-9c-bd6"/>
+                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hzL-ao-WXS"/>
+                            <constraint firstItem="EIc-2M-Wmf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xLJ-XW-jee"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News Reader" id="sbH-WM-vkh"/>

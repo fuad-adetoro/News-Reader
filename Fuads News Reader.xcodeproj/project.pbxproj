@@ -18,6 +18,9 @@
 		110E823226A4422C00CCA27B /* NewsDisplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E823126A4422C00CCA27B /* NewsDisplayerViewController.swift */; };
 		110E823B26A4427200CCA27B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E823A26A4427200CCA27B /* News.swift */; };
 		110E824426A4466800CCA27B /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E824326A4466800CCA27B /* NewsFetcher.swift */; };
+		11CD123726A469FE00F4B9A8 /* HomeNewsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CD123626A469FE00F4B9A8 /* HomeNewsViewCell.xib */; };
+		11CD123C26A4717D00F4B9A8 /* HomeNewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD123B26A4717D00F4B9A8 /* HomeNewsViewCell.swift */; };
+		11CD124226A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD124126A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		110E823126A4422C00CCA27B /* NewsDisplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDisplayerViewController.swift; sourceTree = "<group>"; };
 		110E823A26A4427200CCA27B /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		110E824326A4466800CCA27B /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
+		11CD123626A469FE00F4B9A8 /* HomeNewsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsViewCell.xib; sourceTree = "<group>"; };
+		11CD123B26A4717D00F4B9A8 /* HomeNewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewCell.swift; sourceTree = "<group>"; };
+		11CD124126A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+timeAgoDisplay_Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		110E822626A43CE000CCA27B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11CD123526A469E000F4B9A8 /* HomeNewsViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 		110E822826A43CF200CCA27B /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				11CD124026A4886500F4B9A8 /* Extensions */,
 				110E81F226A438DE00CCA27B /* AppDelegate.swift */,
 				110E81F426A438DE00CCA27B /* SceneDelegate.swift */,
 				110E81F826A438DE00CCA27B /* Main.storyboard */,
@@ -199,6 +207,23 @@
 				110E824326A4466800CCA27B /* NewsFetcher.swift */,
 			);
 			path = "News Fetcher";
+			sourceTree = "<group>";
+		};
+		11CD123526A469E000F4B9A8 /* HomeNewsViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				11CD123626A469FE00F4B9A8 /* HomeNewsViewCell.xib */,
+				11CD123B26A4717D00F4B9A8 /* HomeNewsViewCell.swift */,
+			);
+			path = HomeNewsViewCell;
+			sourceTree = "<group>";
+		};
+		11CD124026A4886500F4B9A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11CD124126A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +331,7 @@
 			files = (
 				110E81FF26A438E200CCA27B /* LaunchScreen.storyboard in Resources */,
 				110E81FC26A438E200CCA27B /* Assets.xcassets in Resources */,
+				11CD123726A469FE00F4B9A8 /* HomeNewsViewCell.xib in Resources */,
 				110E81FA26A438DE00CCA27B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,10 +357,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CD123C26A4717D00F4B9A8 /* HomeNewsViewCell.swift in Sources */,
 				110E824426A4466800CCA27B /* NewsFetcher.swift in Sources */,
 				110E81F726A438DE00CCA27B /* HomeViewController.swift in Sources */,
 				110E81F326A438DE00CCA27B /* AppDelegate.swift in Sources */,
 				110E81F526A438DE00CCA27B /* SceneDelegate.swift in Sources */,
+				11CD124226A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift in Sources */,
 				110E823B26A4427200CCA27B /* News.swift in Sources */,
 				110E823226A4422C00CCA27B /* NewsDisplayerViewController.swift in Sources */,
 			);
