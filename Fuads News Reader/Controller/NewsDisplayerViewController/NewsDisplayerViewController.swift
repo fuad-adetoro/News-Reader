@@ -7,6 +7,8 @@
 
 import UIKit
 
+fileprivate let newsDisplayViewCellID = "NewsDisplayViewCell"
+
 class NewsDisplayerViewController: UIViewController {
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var dismissButton: UIButton!
@@ -47,6 +49,9 @@ class NewsDisplayerViewController: UIViewController {
 // MARK: - CollectionView Ext.
 extension NewsDisplayerViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func configureCollectionView() {
+        let cellNib = UINib(nibName: newsDisplayViewCellID, bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: newsDisplayViewCellID)
+        
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
@@ -56,15 +61,21 @@ extension NewsDisplayerViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell.init()
+        let newsDisplayViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: newsDisplayViewCellID, for: indexPath) as! NewsDisplayViewCell
+        
+        if let article = self.newsArticle {
+            newsDisplayViewCell.configure(article)
+        }
+        
+        return newsDisplayViewCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
 }
 
@@ -85,7 +96,7 @@ extension NewsDisplayerViewController {
         let screenHeight = screenSize.height
         
         DispatchQueue.main.async {
-            self.imageViewHeightConstraint.constant = screenHeight / 3 - 60
+            self.imageViewHeightConstraint.constant = screenHeight / 3 
         }
     }
 }
