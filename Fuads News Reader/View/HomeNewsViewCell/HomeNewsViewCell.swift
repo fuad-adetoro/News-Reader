@@ -41,14 +41,7 @@ class HomeNewsViewCell: UICollectionViewCell {
         self.newsTitle.text = article.title ?? "Title not found"
         self.newsDescription.text = article.content ?? "Description not found"
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
-        
-        if let dateFromPublished = article.publishedAt, let timeAgoText = dateFormatter.date(from: dateFromPublished) {
-            self.newsDateLabel.text = timeAgoText.timeAgoDisplay()
-        } else {
-            self.newsDateLabel.text = ""
-        }
+        self.newsDateLabel.text = article.publishedAt?.stringToSocialDate() ?? "1m ago"
     }
     
 }

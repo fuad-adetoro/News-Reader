@@ -24,6 +24,7 @@
 		11CD124B26A49C6900F4B9A8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD124A26A49C6900F4B9A8 /* ImageLoader.swift */; };
 		11CD125426A4A29D00F4B9A8 /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD125326A4A29D00F4B9A8 /* UIImageLoader.swift */; };
 		11CD125C26A4A2DE00F4B9A8 /* UIImage+loadImage_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD125B26A4A2DE00F4B9A8 /* UIImage+loadImage_Ext.swift */; };
+		11CD126126A4ADFB00F4B9A8 /* String+stringToSocialDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD126026A4ADFB00F4B9A8 /* String+stringToSocialDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		11CD124A26A49C6900F4B9A8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		11CD125326A4A29D00F4B9A8 /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 		11CD125B26A4A2DE00F4B9A8 /* UIImage+loadImage_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+loadImage_Ext.swift"; sourceTree = "<group>"; };
+		11CD126026A4ADFB00F4B9A8 /* String+stringToSocialDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+stringToSocialDate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			children = (
 				11CD124126A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift */,
 				11CD125B26A4A2DE00F4B9A8 /* UIImage+loadImage_Ext.swift */,
+				11CD126026A4ADFB00F4B9A8 /* String+stringToSocialDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				11CD124226A4887E00F4B9A8 /* Date+timeAgoDisplay_Ext.swift in Sources */,
 				110E823B26A4427200CCA27B /* News.swift in Sources */,
 				110E823226A4422C00CCA27B /* NewsDisplayerViewController.swift in Sources */,
+				11CD126126A4ADFB00F4B9A8 /* String+stringToSocialDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
